@@ -1,0 +1,8 @@
+func isProperly(_ sequence: String) -> Bool{
+    var indicator = 0;
+    for c in sequence{
+        indicator += c == "(" ? 1 : -1
+        if indicator < 0 {return false}
+    }
+    return indicator == 0 ? true : false
+}

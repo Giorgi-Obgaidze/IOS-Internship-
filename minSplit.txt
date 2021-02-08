@@ -1,0 +1,22 @@
+
+func minSplit(_ amount: Int) -> Int{
+    if amount == 0{
+        return 0
+    }
+    if amount < 0{
+        return -1
+    }
+    switch amount{
+        case let x where amount >= 50:
+        return minSplit(x - 50) + 1
+        case let x where amount >= 20:
+        return minSplit(x - 20) + 1
+        case let x where amount >= 10:
+        return minSplit(x - 10) + 1
+        case let x where amount >= 5:
+        return minSplit(x - 5) + 1
+        default:
+        return minSplit(amount - 1) + 1
+        
+    }
+}

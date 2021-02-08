@@ -1,0 +1,14 @@
+func notContains(_ array: [Int]) -> Int{
+    let positiveArray = array.filter {$0 > 0}
+    if positiveArray.count  == 0 {return -1}
+    let uniqueArray = Array(Set(positiveArray))
+    let sortedArray = uniqueArray.sorted()
+    print(sortedArray)
+    let sortedArraySize = sortedArray.count
+    for index in 0...sortedArraySize - 1{
+        if index + 1 != sortedArray[index]{
+            return index + 1 
+        }
+    }
+    return sortedArray[sortedArraySize - 1] + 1
+}

@@ -1,0 +1,15 @@
+func isPalindrome(text: String) -> Bool{
+    if text.count <= 1 {
+        return true
+    }
+    let firstChar = String(text.prefix(1)).lowercased()
+    let lastChar = String(text.suffix(1)).lowercased()
+    if firstChar != lastChar{
+        return false
+    }
+    let s = text.index(text.startIndex, offsetBy: 1)
+    let e = text.index(text.endIndex, offsetBy: -1)
+    let range = s..<e
+    let sub = text[range]
+    return isPalindrome(text: String(sub))
+}
